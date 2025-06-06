@@ -1,0 +1,297 @@
+.ca{
+  margin-top: -90px;
+}
+:root{
+    --size-default: 22px;
+    --size-sm: 16px;
+    --color-green:  #58DD93;
+    --color-black: #000;
+  }
+  
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  @property --glowColor {
+    syntax: "<color>";
+    initial-value: #58DD93;
+  }
+  @keyframes rotate {
+    0% {
+      --angle: 0deg;
+      --glowColor: var(--color-green);
+    }
+    100% {
+      --angle: 360deg;
+      --glowColor: var(--color-green);
+    }
+  }
+  
+.btn {
+    border-radius: 100px;
+    border: none;
+    background: none;
+    position: relative;
+    padding: 1px;
+    text-decoration: none;
+    transition: all 0.18s ease-in-out;
+    transform: translate3d(0, 0, 0);
+    width: 190px;
+  }
+  .btn:after, .btn:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: calc(100px + 1.5px);
+    background-size: 100% 100%;
+    background-position: 0px 0px;
+    background-image: conic-gradient(from var(--angle) at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 33%, var(--glowColor) 50%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0) 100%);
+    animation: rotate 2s infinite linear;
+  }
+  .btn:before {
+    animation: rotate 2s infinite linear;
+    filter: blur(20px);
+  }
+  .btn .btnInner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: var(--size-sm) var(--size-default);
+    border-radius: 100px;
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    z-index: 1;
+    transition: all 0.18s ease;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(40px);
+    backface-visibility: hidden;
+  }
+  .btn:hover .btnInner {
+ background:linear-gradient(green,white);
+ transition-duration: 1s;
+ color: black;
+  }
+  .btn:active {
+    transform: scale(0.95);
+  }
+  .ken{
+    width: 100% !important;
+    animation: move 10s ease;
+     -ms-animation: move 10s ease;
+     -webkit-animation: move 10s ease;
+     -o-animation: move 10s ease;
+     -moz-animation: move 10s ease;
+   }
+   @keyframes move {
+     0% {
+       -webkit-transform-origin: bottom left;
+       transform-origin: bottom left;
+       transform: scale(1.0);
+       -ms-transform: scale(1.0);
+       -webkit-transform: scale(1.0);
+      }
+     100% {
+       transform: scale(1.2);
+       -ms-transform: scale(1.2);
+       -webkit-transform: scale(1.2);
+     }
+   }
+   .sponcers{
+    font-size: 50px !important;
+    margin-top: 100px !important;
+    color: yellowgreen !important ;
+  }
+  .line{
+    width: 70px ;
+    height: 4px;
+    border-radius: 20px;
+    margin-top: 10px;
+    background-color:rgb(1, 123, 105);
+    margin-left: 590px;
+  }
+  .x{
+    font-size:200px;
+ 
+    font-weight: 400;
+    margin-top: 40px;
+    color: rgb(95, 3, 3);
+  }
+  .tru{
+    color: rgb(95, 3, 3);
+
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: -120px;
+  }
+  .t{
+    background: url('');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(250, 241, 230);
+    height: 550px;
+    width: 1200x;
+    margin-top: -45px;
+    backdrop-filter:blur(2px);
+    z-index: 10 !important;
+  }
+  .sl{
+     font-weight: 100;
+     font-size: 40px;
+     color: rgb(95, 3, 3);
+  }
+.l{
+  color: rgb(95, 3, 3);
+  font-weight: 400;
+ 
+}
+.l:hover{
+   transition-duration: 0.5s;
+   font-size: 17px;
+   cursor: pointer;
+   text-decoration: underline;  
+}
+.text-danger:hover{
+  text-decoration: underline;
+  transition-duration: 0.5s;
+}
+.ak{
+  font-size: 40px;
+  color: rgb(95, 3, 3);
+  font-weight: 100 !important;
+  margin-top: -60px;
+}
+.ak1{
+  margin-top: -150px;
+  font-size: 40px;
+  color: rgb(95, 3, 3);
+  font-weight: 100 !important;
+}
+.fli{
+    background-image: url('public/flo1.png');
+    background-repeat: no-repeat;
+    height: 1000px;
+     margin-top:-400px;
+   margin-left: -90px;
+    filter:opacity(0.1);
+    z-index: -100  !important;
+  }
+  .bbb{
+    border-color: lightgreen;
+    background-color: white;
+     border-radius: 20px;
+  }
+
+  .bbb:hover{
+    background-color:lightgreen;
+    transition-duration: 0.5s;
+  }
+  .so{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 80px;
+    font-weight: 100;
+    margin-top: -50px;
+    margin-left: -50px;
+  }
+  .a96{
+   margin-top: -30px;
+  }
+  .apple{
+    font-size: 40px;
+    margin-top: -19px !important;
+  }
+  .cow2{
+    margin-top: -150px;
+    margin-left: 50px;
+    z-index: 1000 !important;
+  }
+  .dogi{
+    margin-left: -200px;
+    z-index: 2 !important;
+    margin-top: -0px;
+  }
+  .dow{
+    text-align: center;
+    margin-top: -350px;
+    margin-left: 350px;
+  }
+  .flo2{
+    background: url('public/flo2.png');
+    background-repeat: no-repeat;
+      margin-top:-400px; 
+      height: 470px;
+      /* background-color: red; */
+   margin-left: -200px;
+    filter:opacity(0.1);
+    z-index: -1px;
+}
+.ln{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 80px;
+  font-weight: 100;
+  margin-top: 100px;
+}
+.last{
+  background-color: grey;
+  width: 100%;
+  height: 300px;
+  padding-top:40px;
+  color: white;
+  /* border-radius: 20px; */
+}
+.bhf{
+  font-family: 'Times New Roman', Times, serif !important;
+}
+.bbb {
+  border-color: lightgreen;
+  background-color: white;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.bbb:hover {
+  background-color: lightgreen;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.bbbb{
+  border-color: lightgreen;
+  background-color: white;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+.bbbb:hover{
+  background-color:lightgreen;
+  transform: translateY(-5px) !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+}
+.ca {
+    padding: 20px 0; /* Add padding to the carousel section */
+}
+.carousel-caption {
+    /* background: rgba(0, 0, 0, 0.5); Optional: Add background to captions */
+    padding: 15px; /* Add padding to captions */
+}
+.btn {
+    padding: 10px 20px; /* Adjust button padding */
+    background-color: #28a745; /* Button color */
+    color: white; /* Button text color */
+    border-radius: 5px; /* Rounded corners */
+}
+.btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+.sponcers {
+    margin-top: 20px; /* Add margin above sponsors section */
+}
+.line {
+    height: 2px;
+    background: #ccc; /* Line color */
+    margin: 20px 0; /* Margin above and below the line */
+}

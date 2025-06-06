@@ -1,0 +1,5 @@
+.form{
+    display: grid !important;
+    justify-content: center !important;
+    background: linear-gradient(yellowgreen,green);
+}

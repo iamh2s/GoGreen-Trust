@@ -1,0 +1,17 @@
+.adminsee{
+    background: linear-gradient(white,yellowgreen,green);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    height: 200%;
+}
+.admin-button{
+    margin: 50px;
+    height: 60px ;
+    width: 100px !important;
+    border-radius: 20px;
+    margin-left: 570px;
+    background:linear-gradient(yellowgreen,green);
+}
+.admin-button:hover{
+    background:linear-gradient(green,yellowgreen);
+    transition-duration: 1s !important;
+}

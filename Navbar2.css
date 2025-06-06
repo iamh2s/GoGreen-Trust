@@ -1,0 +1,97 @@
+.nav2{
+    top: 0px;
+    backdrop-filter: blur(3px) !important;
+   
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+
+     position: sticky;
+     z-index: 10;
+   
+}
+
+.go{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: -2px !important;
+}
+.go:hover{
+    color: black !important;
+}
+.b:hover{
+    color: black !important;
+}
+
+.nav2:hover{
+    background:linear-gradient(green,white) !important;
+    cursor: pointer;
+    transition-duration: 1s !important ;
+    transition-delay: 1s;
+}
+a:hover{
+    color: white !important;
+    transition-duration: 0.5s;
+}
+
+.dd{
+    color: white !important;
+}
+.adlo{
+    color: whitesmoke;
+    background-color: green;
+    font-size: small !important;
+    width: 120px;
+    height: 50px;
+    border-radius: 20px;
+    margin-left: 10px;
+    position: fixed;
+    top: 490px;
+    right: 10px;
+}
+/* Base styles for the navbar */
+.nav2 {
+    padding: 10px 0; /* Add some padding to the navbar */
+}
+.navbar-brand {
+    font-weight: bold; /* Make the brand name bold */
+}
+/* Media Queries */
+/* For devices with a width of 992px and below (tablets) */
+@media (max-width: 992px) {
+    .navbar-brand {
+        font-size: 1.5rem; /* Smaller brand name font size */
+    }
+    .nav-link {
+        font-size: 0.9rem; /* Smaller font size for nav links */
+    }
+    .nav2 {
+        padding: 5px 0; /* Reduce padding for smaller screens */
+    }
+}
+/* For devices with a width of 768px and below (tablets and mobile devices) */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: flex-start; /* Align items to the start */
+        width: 100%; /* Full width for the nav */
+    }
+    .nav-link {
+        margin: 5px 0; /* Add margin between links */
+        width: 100%; /* Full width for each link */
+        text-align: center; /* Center align text */
+    }
+    .adlo {
+        width: 100%; /* Full width for the button */
+        margin-top: 10px; /* Add margin above the button */
+    }
+}
+/* For devices with a width of 576px and below (mobile devices) */
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.2rem; /* Even smaller brand name font size */
+    }
+    .nav-link {
+        font-size: 0.8rem; /* Smaller font size for nav links */
+    }
+    .nav2 {
+        padding: 2px 0; /* Further reduce padding for very small screens */
+    }
+}

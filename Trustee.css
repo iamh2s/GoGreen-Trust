@@ -1,0 +1,20 @@
+.card {
+    transition: transform 0.3s ease;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(144, 238, 144, 0.1));
+  }
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  .card-img-top {
+    height: 250px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  .card-body {
+    padding: 1.5rem;
+    cursor: pointer;
+  }
+  .card-title {
+    color: darkgreen;
+    font-weight: 600;
+  }

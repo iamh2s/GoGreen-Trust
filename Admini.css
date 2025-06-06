@@ -1,0 +1,34 @@
+
+#us{
+    border-radius: 20px;
+    height: 50px;
+    width: 300px;
+    margin-top: 20px;
+}
+.foo{
+    background: linear-gradient(white,green,yellow);
+}
+#pw{
+    border-radius: 20px;
+    height: 50px;
+    width: 300px;
+    margin-top: 20px; 
+}
+.baa{
+    border-radius: 20px;
+    width:130px;
+    background: linear-gradient(green,yellowgreen);
+    margin-bottom:100px;
+}
+.f{
+  border: 0.5px solid green;
+  border-radius: 20px;
+  margin: 400px;
+  margin-top: 50px;
+  backdrop-filter: blur(130px) !important;
+  box-shadow: 0 0px 200px rgba(0, 0, 0, 0.1) !important;
+
+}
+.foo{
+    margin-top: -300px;
+}

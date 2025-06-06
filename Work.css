@@ -1,0 +1,13 @@
+.sup{
+    border-color: lightgreen;
+    background-color: white;
+     border-radius: 20px;
+  }
+
+  .sup:hover{
+    background-color:lightgreen !important;
+    transition-duration: 0.5s !important;
+  }
+.last{
+  background:linear-gradient(green,yellowgreen)
+}

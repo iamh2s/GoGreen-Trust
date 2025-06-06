@@ -1,0 +1,56 @@
+
+.hh{
+    z-index: 100 !important;
+    font-weight: 500;
+    font-size: 15px;
+    color: white;
+   height: 30px !important;
+   position: sticky !important;
+  }
+  
+  .mm{
+    font-size: small;
+  }
+  .mm a{
+    color: white;
+    text-decoration: none;
+  }
+  .mm a:hover{
+    text-decoration: underline;
+    color: white;
+  }
+  
+  .m a{
+    color :white;
+    text-decoration: none;
+  }
+  .m a:hover{
+    text-decoration: none;
+    color: gray !important;
+    transition-duration: .5s;
+  }
+  @media (max-width: 768px) {
+    .hh {
+        font-size: 20px; /* Smaller font size for smaller screens */
+    }
+    .text-end {
+        text-align: center; /* Center align the social icons */
+        margin-top: 10px; /* Add some margin on top */
+    }
+    .m {
+        display: flex; /* Use flexbox for social icons */
+        justify-content: center; /* Center the icons */
+    }
+    .m a {
+        margin: 0 5px; /* Add margin between icons */
+    }
+}
+/* For devices with a width of 576px and below (mobile devices) */
+@media (max-width: 576px) {
+    .hh {
+        font-size: 18px; /* Even smaller font size for very small screens */
+    }
+    .container-fluid {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+}
