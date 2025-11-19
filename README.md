@@ -1,8 +1,17 @@
-# React + Vite
+A clean, responsive, and modern website built for a Trust/NGO to showcase its mission, services, activities, and contact details. Designed with simplicity, accessibility, and smooth navigation in mind. This project demonstrates full-stack development skills using React and Django (or replace the stack if you used another).
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features:
 
-Currently, two official plugins are available:
+Responsive UI for mobile & desktop
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Multi-page navigation (Home, About, Gallery, Services, Contact)
+
+Clean and minimal design
+
+Image galleries to highlight Trust events
+
+Contact form with backend handling
+
+SEO-friendly structure
+
+Fast and lightweight
