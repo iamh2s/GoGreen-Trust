@@ -1,0 +1,598 @@
+/* ===============================
+   BASE STYLES
+================================ */
+.ca {
+  margin-top: -20px;
+}
+@media (min-width:320px) and (max-width:480px) {
+  .ca {
+    margin-top: 60px !important;
+  }
+}
+
+:root {
+  --size-default: 22px;
+  --size-sm: 16px;
+  --color-green: #58DD93;
+  --color-black: #000;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --glowColor {
+  syntax: "<color>";
+  initial-value: #58DD93;
+}
+
+@keyframes rotate {
+  0% {
+    --angle: 0deg;
+    --glowColor: var(--color-green);
+  }
+  100% {
+    --angle: 360deg;
+    --glowColor: var(--color-green);
+  }
+}
+
+/* ===============================
+   BUTTON STYLES
+================================ */
+.btn {
+  border-radius: 100px;
+  border: none;
+  background: none;
+  position: relative;
+  padding: 1px;
+  text-decoration: none;
+  transition: all 0.18s ease-in-out;
+  transform: translate3d(0, 0, 0);
+  width: 190px;
+}
+
+.ken {
+  animation: move 10s ease;
+  width: 100% !important;
+}
+
+.btn:after,
+.btn:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: calc(100px + 1.5px);
+  background-size: 100% 100%;
+  background-position: 0px 0px;
+  background-image: conic-gradient(from var(--angle) at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 33%, var(--glowColor) 50%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0) 100%);
+  animation: rotate 2s infinite linear;
+}
+
+.btn:before {
+  animation: rotate 2s infinite linear;
+  filter: blur(20px);
+}
+
+.btn .btnInner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: var(--size-sm) var(--size-default);
+  border-radius: 100px;
+  color: white;
+  font-weight: 500;
+  font-size: 15px;
+  z-index: 1;
+  transition: all 0.18s ease;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(40px);
+  backface-visibility: hidden;
+}
+
+.btn:hover .btnInner {
+  background: linear-gradient(green, white);
+  transition-duration: 1s;
+  color: black;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+@keyframes move {
+  0% {
+    transform-origin: bottom left;
+    transform: scale(1.0);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+/* ===============================
+   SPONSORS SECTION
+================================ */
+.sponcers {
+  font-size: 50px !important;
+  margin-top: 100px !important;
+  color: yellowgreen !important;
+}
+
+.line {
+  width: 70px !important;
+  height: 4px !important;
+  border-radius: 20px !important;
+  margin-top: 10px !important;
+  background-color: rgb(1, 123, 105) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* ===============================
+   CLIENT IMAGES
+================================ */
+.c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8 {
+  padding: 0px 30px;
+}
+
+.c2, .c7 {
+  margin-top: -25px;
+}
+
+.c3 {
+  margin-top: -15px;
+}
+
+/* ===============================
+   CONTENT SECTIONS
+================================ */
+.x {
+  font-size: 200px;
+  font-weight: 400;
+  margin-top: 40px;
+  color: rgb(95, 3, 3);
+}
+
+.tru {
+  color: rgb(95, 3, 3);
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: -120px;
+}
+
+.t {
+  background: url('');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(250, 241, 230);
+  height: 590px;
+  width: 100%;
+  margin-top: -60px;
+  backdrop-filter: blur(2px);
+  z-index: 10 !important;
+  padding: 20px;
+}
+
+.sl {
+  font-weight: 100;
+  font-size: 40px;
+  color: rgb(95, 3, 3);
+}
+
+.text-danger:hover {
+  text-decoration: underline;
+  transition-duration: 0.5s;
+}
+.learn a{
+  text-decoration: underline !important;
+  color: #000000 !important;
+}
+.learn{
+  color: rgb(95, 3, 3) !important;
+  font-weight: 700 !important;
+}
+.learn:hover{
+  /* text-decoration: underline !important; */
+  transition-duration: 0.5s !important;
+} 
+
+
+.ak {
+  font-size: 40px;
+  color: rgb(95, 3, 3);
+  font-weight: 100 !important;
+  margin-top: -60px;
+}
+
+.ak1 {
+  margin-top: -150px;
+  font-size: 40px;
+  color: rgb(95, 3, 3);
+  font-weight: 100 !important;
+}
+
+/* ===============================
+   DECORATIVE ELEMENTS
+================================ */
+.fli {
+  background-image: url('public/flo1.png');
+  background-repeat: no-repeat;
+  height: 1000px;
+  margin-top: -400px;
+  margin-left: -90px;
+  filter: opacity(0.1);
+  z-index: -100 !important;
+}
+
+.flo2 {
+  background: url('public/flo2.png');
+  background-repeat: no-repeat;
+  margin-top: -400px;
+  height: 470px;
+  margin-left: -200px;
+  filter: opacity(0.1);
+  z-index: -1px;
+}
+
+/* ===============================
+   CARD STYLES
+================================ */
+.bbb, .bbbb {
+  border-color: lightgreen;
+  background-color: white;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.bbb:hover, .bbbb:hover {
+  background-color: lightgreen;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ===============================
+   OTHER ELEMENTS
+================================ */
+.so, .ln {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 80px;
+  font-weight: 100;
+  margin-top: -50px;
+  margin-left: -50px;
+}
+
+.ln {
+  margin-top: 100px;
+  margin-left: 0;
+}
+
+.a96 {
+  margin-top: -30px;
+}
+
+.apple {
+  font-size: 40px;
+  margin-top: -19px !important;
+}
+
+.cow2 {
+  margin-top: -150px;
+  margin-left: 50px;
+  z-index: 1000 !important;
+}
+
+.dogi {
+  margin-left: -200px;
+  z-index: 2 !important;
+  margin-top: 0px;
+}
+
+.dow {
+  text-align: center;
+  margin-top: -350px;
+  margin-left: 350px;
+}
+
+.last {
+  background-color: grey;
+  width: 100%;
+  height: 300px;
+  padding-top: 40px;
+  color: white;
+}
+
+.bhf {
+  font-family: 'Times New Roman', Times, serif !important;
+}
+
+.ca {
+  padding: 20px 0;
+}
+
+.carousel-caption {
+  padding: 15px;
+}
+
+/* ===============================
+   TABLET RESPONSIVE (768px - 1024px)
+================================ */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .sponcers {
+    font-size: 40px !important;
+    margin-top: 80px !important;
+  }
+
+  .x {
+    font-size: 150px;
+    margin-top: 30px;
+  }
+
+  .tru {
+    font-size: 25px;
+    margin-top: -100px;
+  }
+
+  .t {
+    height: auto;
+    min-height: 450px;
+    padding: 30px 20px;
+  }
+
+  .sl {
+    font-size: 35px;
+  }
+
+  .ak, .ak1 {
+    font-size: 35px;
+  }
+
+  .so, .ln {
+    font-size: 60px;
+    margin-left: 0;
+  }
+
+  .line {
+    width: 60px !important;
+  }
+
+  .btn {
+    width: 170px;
+  }
+
+  .cow2, .dogi {
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  .dow {
+    margin-left: 0;
+    margin-top: -250px;
+  }
+
+  .c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8 {
+    padding: 0px 20px;
+  }
+
+  marquee img {
+    height: 70px !important;
+    width: 140px !important;
+  }
+}
+
+/* ===============================
+   MOBILE RESPONSIVE (max-width: 767px)
+================================ */
+@media (max-width: 767px) {
+  /* Carousel */
+  .ca {
+    margin-top: 0;
+    padding: 10px 0;
+  }
+
+  .ken {
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .carousel-caption {
+    padding: 10px;
+  }
+
+  .carousel-caption p {
+    font-size: 12px !important;
+    margin-top: 5px !important;
+  }
+
+  /* Button */
+  .btn {
+    width: 140px;
+    padding: 0.5px;
+  }
+
+  .btn .btnInner {
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+
+  /* Hero Section */
+  .t {
+    height: auto;
+    min-height: 400px;
+    margin-top: -30px;
+    padding: 20px 15px;
+  }
+
+  .x {
+    font-size: 80px;
+    margin-top: 20px;
+  }
+
+  .tru {
+    font-size: 18px;
+    margin-top: -60px;
+    padding: 0 10px;
+  }
+
+  .ka {
+    font-size: 14px !important;
+    padding: 0 10px;
+  }
+
+  .sl {
+    font-size: 25px;
+  }
+
+  .l {
+    font-size: 14px;
+  }
+
+  .l:hover {
+    font-size: 15px;
+  }
+
+  /* Sponsors Section */
+  .sponcers {
+    font-size: 28px !important;
+    margin-top: 50px !important;
+  }
+
+  .don {
+    font-size: 25px !important;
+  }
+
+  .line {
+    width: 50px !important;
+    height: 3px !important;
+  }
+
+  /* Client Logos */
+  .c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8 {
+    padding: 0px 15px;
+  }
+
+  marquee img {
+    height: 50px !important;
+    width: 100px !important;
+  }
+
+  /* Typography */
+  .ak, .ak1 {
+    font-size: 28px;
+    margin-top: -30px;
+  }
+
+  .so, .ln {
+    font-size: 40px;
+    margin-top: 20px;
+    margin-left: 0;
+  }
+
+  .apple {
+    font-size: 28px;
+    margin-top: -10px !important;
+  }
+
+  /* Decorative Elements */
+  .fli, .flo2 {
+    display: none;
+  }
+
+  .cow2, .dogi {
+    margin: 20px auto;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .dow {
+    margin: 20px auto;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  /* Footer */
+  .last {
+    height: auto;
+    min-height: 250px;
+    padding: 30px 20px;
+  }
+
+  /* Cards */
+  .bbb, .bbbb {
+    margin-bottom: 15px;
+  }
+}
+
+/* ===============================
+   SMALL MOBILE (max-width: 480px)
+================================ */
+@media (max-width: 480px) {
+  .ken {
+    height: 250px;
+  }
+
+  .btn {
+    width: 120px;
+  }
+
+  .btn .btnInner {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+
+  .x {
+    font-size: 60px;
+  }
+
+  .tru {
+    font-size: 16px;
+    margin-top: -40px;
+  }
+
+  .sponcers {
+    font-size: 24px !important;
+  }
+
+  .don {
+    font-size: 20px !important;
+  }
+
+  marquee img {
+    height: 40px !important;
+    width: 80px !important;
+  }
+
+  .so, .ln {
+    font-size: 32px;
+  }
+}
+
+/* ===============================
+   LANDSCAPE MOBILE
+================================ */
+@media (max-width: 767px) and (orientation: landscape) {
+  .ken {
+    height: 200px;
+  }
+
+  .t {
+    min-height: 300px;
+  }
+
+  .x {
+    font-size: 60px;
+    margin-top: 10px;
+  }
+
+  .tru {
+    font-size: 14px;
+    margin-top: -40px;
+  }
+}

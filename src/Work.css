@@ -1,0 +1,386 @@
+/* ===============================
+   BASE STYLES - Bootstrap Enhanced
+================================ */
+.sup {
+  border: 2px solid lightgreen;
+  background-color: white;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  padding: 10px 25px;
+}
+.lead{
+  font-weight: 500 !important;
+  font-size: medium !important;
+}
+
+.sup:hover {
+  background-color: lightgreen !important;
+  transition-duration: 0.5s !important;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.last {
+  background: linear-gradient(green, yellowgreen);
+}
+
+/* ===============================
+   SECTION STYLING
+================================ */
+.sponcers {
+  color: yellowgreen !important;
+  font-weight: 400;
+}
+
+.line {
+  width: 70px;
+  height: 4px;
+  border-radius: 20px;
+  background-color: rgb(1, 123, 105);
+  margin: 10px auto;
+}
+
+/* ===============================
+   DECORATIVE DOTS
+================================ */
+.ak {
+  font-size: 100px;
+  font-weight: 400;
+  margin-top: -60px;
+  color: rgb(95, 3, 3);
+}
+
+.ak1 {
+  font-size: 100px;
+  color: rgb(95, 3, 3);
+  font-weight: 400;
+  margin-top: -150px;
+}
+
+/* ===============================
+   BUTTONS - Bootstrap Enhanced
+================================ */
+.bbb, 
+.bbbb {
+  border: 2px solid lightgreen;
+  background-color: white;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  padding: 12px 30px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.bbb:hover, 
+.bbbb:hover {
+  background-color: lightgreen !important;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  color: #000;
+}
+.bbb a, 
+.bbbb a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* ===============================
+   TYPOGRAPHY
+================================ */
+.bhf {
+  font-family: 'Times New Roman', Times, serif !important;
+}
+
+/* ===============================
+   HIDE DECORATIVE ELEMENTS
+================================ */
+.fli, 
+.flo2 {
+  display: none;
+}
+
+/* ===============================
+   TABLET & MOBILE - Bootstrap Breakpoints
+================================ */
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  .sponcers {
+    font-size: 2.5rem !important;
+  }
+  
+  .ak, .ak1 {
+    font-size: 80px;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .sponcers {
+    font-size: 2rem !important;
+    margin-top: 3rem !important;
+  }
+  
+  .line {
+    width: 60px;
+    height: 3px;
+  }
+  
+  .ak {
+    font-size: 70px;
+    margin-top: -40px;
+  }
+  
+  .ak1 {
+    font-size: 70px;
+    margin-top: -100px;
+  }
+  
+  /* Center images on tablet */
+  img.img-fluid {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .sponcers {
+    font-size: 1.75rem !important;
+    margin-top: 2rem !important;
+  }
+  
+  .line {
+    width: 50px;
+    height: 3px;
+  }
+  
+  .ak {
+    font-size: 60px;
+    margin-top: -30px;
+  }
+  
+  .ak1 {
+    font-size: 60px;
+    margin-top: -80px;
+  }
+  
+  /* Stack content vertically */
+  .row.g-4 {
+    row-gap: 2rem !important;
+  }
+  
+  /* Full width buttons on mobile */
+  .bbb, 
+  .bbbb {
+    width: 100%;
+    max-width: 280px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Adjust padding */
+  .p-md-4 {
+    padding: 1rem !important;
+  }
+  
+  .px-md-5 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Font size adjustments */
+  .lead {
+    font-size: 1rem;
+  }
+  
+  .display-1 {
+    font-size: 3rem !important;
+  }
+  
+  .display-3 {
+    font-size: 2.5rem !important;
+  }
+  
+  .display-6 {
+    font-size: 1.25rem !important;
+  }
+  
+  /* Image adjustments */
+  img.img-fluid {
+    margin-bottom: 1rem;
+  }
+  
+  /* Last section */
+  .last {
+    padding: 2rem 1rem !important;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .sponcers {
+    font-size: 1.5rem !important;
+    margin-top: 1.5rem !important;
+  }
+  
+  .line {
+    width: 40px;
+    height: 2px;
+  }
+  
+  .ak {
+    font-size: 50px;
+    margin-top: -20px;
+  }
+  
+  .ak1 {
+    font-size: 50px;
+    margin-top: -60px;
+  }
+  
+  /* Icons */
+  .bi-house-heart-fill,
+  .fa-apple-alt {
+    width: 24px !important;
+    height: 24px !important;
+    font-size: 24px !important;
+  }
+  
+  /* Typography */
+  .fs-2 {
+    font-size: 1.5rem !important;
+  }
+  
+  .lead {
+    font-size: 0.95rem;
+  }
+  
+  .display-1 {
+    font-size: 2.5rem !important;
+  }
+  
+  .display-3 {
+    font-size: 2rem !important;
+  }
+  
+  .display-6 {
+    font-size: 1.1rem !important;
+  }
+  
+  /* Buttons */
+  .bbb{
+    padding: 10px 25px;
+    font-size: 0.9rem;
+    background-color:yellowgreen;
+    text-decoration: none;
+
+  }
+  .bbbb {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+    background-color: lightgreen;
+    text-decoration: none;
+
+  }
+  .bbbb a{
+    color: red;
+  }
+  
+  /* Container padding */
+  .container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Last section */
+  .last {
+    padding: 1.5rem 0.75rem !important;
+  }
+}
+
+/* Extra extra small devices (less than 400px) */
+@media (max-width: 399.98px) {
+  .sponcers {
+    font-size: 1.25rem !important;
+  }
+  
+  .ak, .ak1 {
+    font-size: 40px;
+  }
+  
+  .ak {
+    margin-top: -15px;
+  }
+  
+  .ak1 {
+    margin-top: -50px;
+  }
+  
+  .display-1 {
+    font-size: 2rem !important;
+  }
+  
+  .display-6 {
+    font-size: 1rem !important;
+  }
+  
+  .lead {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===============================
+   LANDSCAPE ORIENTATION
+================================ */
+@media (max-width: 767.98px) and (orientation: landscape) {
+  .sponcers {
+    font-size: 1.5rem !important;
+    margin-top: 1rem !important;
+  }
+  
+  .ak, .ak1 {
+    font-size: 50px;
+  }
+  
+  .ak {
+    margin-top: -20px;
+  }
+  
+  .ak1 {
+    margin-top: -60px;
+  }
+  
+  .display-1 {
+    font-size: 2.5rem !important;
+  }
+  
+  .display-3 {
+    font-size: 2rem !important;
+  }
+  
+  img.img-fluid {
+    max-width: 400px !important;
+  }
+  
+  .last {
+    padding: 1.5rem !important;
+  }
+}
+
+/* ===============================
+   PRINT MEDIA
+================================ */
+@media print {
+  .bbb,
+  .bbbb {
+    display: none;
+    text-decoration: none;
+  }
+  
+  .last {
+    background: #fff !important;
+    color: #000 !important;
+  }
+}

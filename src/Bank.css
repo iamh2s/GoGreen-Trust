@@ -1,0 +1,23 @@
+.no1{
+    padding: 100px 470px;
+    background:linear-gradient(white,yellowgreen);
+}
+.inp{
+   margin-left: 50px;
+   border: 1px thick black;
+   border-radius: 20px;
+   height: 40px;
+   width: 200px;
+   
+}
+.me{
+    border-radius: 20px;
+    border: 4px thick black;
+    text-align: center;
+    height: 30px;
+    cursor: pointer;
+    margin-left: 100px;
+    background: linear-gradient(white,yellowgreen);
+
+}
+

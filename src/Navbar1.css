@@ -1,0 +1,212 @@
+/* ===============================
+   BASE STYLES
+================================ */
+.hh {
+  z-index: 100 !important;
+  font-weight: 500;
+  font-size: 15px;
+  color: white;
+  min-height: 40px !important;
+  position: relative !important;
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.mm {
+  font-size: small;
+}
+
+.mm a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.mm a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.m {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.m a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.m a:hover {
+  text-decoration: none;
+  color: lightgray !important;
+  transition-duration: 0.5s;
+  transform: scale(1.15);
+}
+
+.m svg {
+  transition: transform 0.3s ease;
+}
+
+.m a:hover svg {
+  transform: scale(1.1);
+}
+
+/* ===============================
+   TABLET RESPONSIVE (768px - 1024px)
+================================ */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .hh {
+    font-size: 14px;
+    min-height: 36px !important;
+    padding: 6px 0;
+  }
+
+  .container-fluid {
+    padding: 0 15px;
+  }
+
+  .m {
+    gap: 12px;
+  }
+
+  .m svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* ===============================
+   MOBILE RESPONSIVE (max-width: 767px)
+================================ */
+@media (max-width: 767px) {
+  .hh {
+    font-size: 13px;
+    min-height: auto !important;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .container-fluid {
+    padding: 0 10px;
+  }
+
+  .row {
+    margin: 0;
+  }
+
+  .col-md-6, .col-12 {
+    padding: 5px 10px;
+  }
+
+  /* Top text row */
+  .text-center.text-md-start {
+    margin-bottom: 5px;
+  }
+
+  /* Social Icons Row */
+  .text-center.text-md-end {
+    margin-top: 5px;
+  }
+
+  .m {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .m svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* ===============================
+   SMALL MOBILE (max-width: 576px)
+================================ */
+@media (max-width: 576px) {
+  .hh {
+    font-size: 12px;
+    padding: 8px 0;
+  }
+
+  .container-fluid {
+    padding: 0 8px;
+  }
+
+  .col-12 {
+    padding: 4px 8px;
+  }
+
+  .m {
+    gap: 12px;
+  }
+
+  .m svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* ===============================
+   EXTRA SMALL MOBILE (max-width: 380px)
+================================ */
+@media (max-width: 380px) {
+  .hh {
+    font-size: 11px;
+    padding: 6px 0;
+  }
+
+  .m {
+    gap: 10px;
+  }
+
+  .m svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* ===============================
+   LANDSCAPE MOBILE
+================================ */
+@media (max-width: 767px) and (orientation: landscape) {
+  .hh {
+    font-size: 11px;
+    padding: 5px 0;
+    min-height: 30px !important;
+  }
+
+  .col-12 {
+    padding: 3px 8px;
+  }
+
+  .m {
+    gap: 10px;
+  }
+
+  .m svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* ===============================
+   FIX OVERFLOW ON SMALL SCREENS
+================================ */
+@media (max-width: 767px) {
+  .row.hh {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .col-md-6 {
+    width: 100%;
+  }
+}

@@ -1,0 +1,156 @@
+
+.footer {
+     padding-top: 50px !important;
+    color: white;
+    
+  }
+.space{
+  background-color: white !important;
+  width: 100% !important;
+  height: 1px !important;
+}
+  
+  .footer-content {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    margin-bottom: -50px !important;
+
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul li a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .footer-section ul li a:hover {
+    color: black !important;
+  }
+  
+  
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top:-30px;
+    font-size: 14px;
+    padding-bottom: 70px;
+  }
+  
+  .social-links {
+    display: grid;
+    grid-template-columns: repeat(4,0.5fr);
+    /* gap: 3px; */
+}
+@media (max-width:320) {
+  .social-links{
+    display: flex;
+    justify-content: center !important;
+  }
+}
+  
+  .social-links li {
+    list-style: none;
+  }
+  
+  .social-links li a {
+    text-decoration: none;
+  }
+  
+  .social-links li a:hover {
+    color: #007bff;
+  }
+/* Footer Credit Section */
+/* Footer Credit Section */
+.footer-credit {
+  /* margin-top: 12px;
+   */
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  color: #f1f1f1;
+  animation: creditGlow 3s ease-in-out infinite alternate;
+  background-color: rgb(77, 76, 76)
+}
+
+.footer-credit strong {
+  color: #00ffd5;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.footer-credit strong:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(0, 255, 213, 0.8);
+  cursor: pointer;
+}
+
+.credit-separator {
+  opacity: 0.6;
+}
+
+/* Subtle glowing animation */
+@keyframes creditGlow {
+  from {
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  to {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* Mobile Friendly */
+@media (max-width: 576px) {
+  .footer-credit {
+    flex-direction: column;
+    gap: 2px;
+    font-size: 12px;
+  }
+
+  .credit-separator {
+    display: none;
+  }
+}
+/* tablet */
+@media (max-width:768px) {
+  .footer-credit {
+    flex-direction: column;
+    gap: 2px;
+    font-size: 12px;
+  }
+}
+.credit a{
+  color: rgba(0, 204, 255, 0.959) !important;
+  text-decoration: none !important;
+}
+.credit a:hover{
+  text-decoration: underline !important;
+}
+.creditt a{
+  color: white !important;
+  text-decoration: none !important;
+}
