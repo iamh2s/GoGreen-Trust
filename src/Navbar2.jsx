@@ -30,8 +30,39 @@ const Navbar2 = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+   function startVoiceAI() {
+    const SpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
+  
+    const recognition = new SpeechRecognition();
+    recognition.lang = "en-IN";
+    recognition.continuous = false;
+  
+    recognition.start();
+  
+    recognition.onresult = async (event) => {
+      const userText = event.results[0][0].transcript;
+      console.log("User said:", userText);
+  
+      const res = await fetch("http://127.0.0.1:8000/api/voice/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: userText }),
+      });
+  
+      const data = await res.json();
+      speak(data.reply);
+    };
+  }
+  
+  function speak(text) {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "en-IN";
+    speechSynthesis.speak(utterance);
+  }
 
   return (
+    <>
     <div 
       className={`nav2 ${scrolled ? 'scrolled' : ''}`} 
       style={{ background: navbarColor }}
@@ -50,9 +81,9 @@ const Navbar2 = () => {
               <Nav.Link className='text-dark a' href='/aboutus' style={{ fontWeight: '700' }}>
                 ABOUT US
               </Nav.Link>
-              <Nav.Link className='text-dark a' href='/Ourworks' style={{ fontWeight: '700' }}>
+              {/* <Nav.Link className='text-dark a' href='/Ourworks' style={{ fontWeight: '700' }}>
                 OUR WORKS
-              </Nav.Link>
+              </Nav.Link> */}
               <Nav.Link href="/contact" className='text-dark a' style={{ fontWeight: '700' }}>
                 CONTACT US
               </Nav.Link>
@@ -62,11 +93,15 @@ const Navbar2 = () => {
               <a href='/adm'>
                 <button className='adlo'>ADMINISTRATOR LOGIN</button>
               </a>
-            </Nav>
+              
+        </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
     </div>
+     
+    
+    </>
   );
 };
 

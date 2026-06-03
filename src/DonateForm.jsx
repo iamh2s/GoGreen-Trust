@@ -3,7 +3,7 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import './DonateForm.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import "react-country-state-city/dist/react-country-state-city.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -11,23 +11,74 @@ import {
   CitySelect,
   CountrySelect,
   StateSelect,
+  GetCountries,
+  GetState,
+  GetCity
 } from "react-country-state-city";
 import axios from 'axios';
 
 const DonateForm = () => {
   useEffect(() => {
-    AOS.init({
-      offset: 120,
-      duration: 1000,
-      easing: 'ease',
-      delay: 0,
-      once: true
-    });
+    AOS.init({ offset: 120, duration: 1000, easing: 'ease', delay: 0, once: true });
   }, []);
 
   const [country, setCountry] = useState(null);
   const [currentState, setCurrentState] = useState(null);
   const [currentCity, setCurrentCity] = useState(null);
+  const countryRef = useRef(null);
+  const stateRef = useRef(null);
+
+  useEffect(() => { countryRef.current = country; }, [country]);
+  useEffect(() => { stateRef.current = currentState; }, [currentState]);
+
+  // Global hook so VoiceAI (Jessy) can update React state directly
+  useEffect(() => {
+    window.jessyFillField = async (fieldName, value) => {
+      if (!['country', 'state', 'city'].includes(fieldName)) {
+        detailsfn(prev => ({ ...prev, [fieldName]: value }));
+        return;
+      }
+      
+      try {
+        if (fieldName === 'country') {
+          if (!value) { setCountry(null); setCurrentState(null); setCurrentCity(null); detailsfn(p => ({ ...p, country: '', state: '', city: '' })); return; }
+          const countries = await GetCountries();
+          const match = countries.find(c => c.name.toLowerCase().includes(value.toLowerCase()));
+          if (match) {
+            setCountry(match); setCurrentState(null); setCurrentCity(null);
+            detailsfn(p => ({ ...p, country: match.name, state: '', city: '' }));
+          }
+        } 
+        else if (fieldName === 'state') {
+          if (!value) { setCurrentState(null); setCurrentCity(null); detailsfn(p => ({ ...p, state: '', city: '' })); return; }
+          const cid = countryRef.current?.id;
+          if (cid) {
+            const states = await GetState(cid);
+            const match = states.find(s => s.name.toLowerCase().includes(value.toLowerCase()));
+            if (match) {
+              setCurrentState(match); setCurrentCity(null);
+              detailsfn(p => ({ ...p, state: match.name, city: '' }));
+            }
+          }
+        }
+        else if (fieldName === 'city') {
+           if (!value) { setCurrentCity(null); detailsfn(p => ({ ...p, city: '' })); return; }
+           const cid = countryRef.current?.id;
+           const sid = stateRef.current?.id;
+           if (cid && sid) {
+             const cities = await GetCity(cid, sid);
+             const match = cities.find(c => c.name.toLowerCase().includes(value.toLowerCase()));
+             if (match) {
+               setCurrentCity(match);
+               detailsfn(p => ({ ...p, city: match.name }));
+             }
+           }
+        }
+      } catch(e) { console.error("Voice location error:", e); }
+    };
+    // Let the reassignment happen freely
+  }, []);
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [projectdetails, detailsfn] = useState({
@@ -122,8 +173,6 @@ const DonateForm = () => {
       !projectdetails.address.trim() ||
       !projectdetails.phonenumber.trim() ||
       !projectdetails.country.trim() ||
-      !projectdetails.state.trim() ||
-      !projectdetails.city.trim() ||
       !projectdetails.amount.trim() ||
       !projectdetails.pincode.trim() ||
       !projectdetails.gender.trim()
@@ -167,7 +216,9 @@ const DonateForm = () => {
       })
       .catch(err => {
         console.error("Submission error:", err);
-        alert("There was an error submitting your donation. Please try again.");
+        // Error handling fallback: if the backend is down, warn but still proceed to payment
+        alert("Warning: Backend not reachable. Proceeding to Razorpay for demo purposes.");
+        initiateRazorpay();
         setIsSubmitting(false);
       });
   }
@@ -323,6 +374,7 @@ const DonateForm = () => {
                       }}
                       placeHolder="Select Country"
                       disabled={isSubmitting}
+                      defaultValue={country}
                     />
                   </Form.Group>
 
@@ -342,6 +394,7 @@ const DonateForm = () => {
                       }}
                       placeHolder="Select State"
                       disabled={isSubmitting || !country}
+                      defaultValue={currentState}
                     />
                   </Form.Group>
 
@@ -357,6 +410,7 @@ const DonateForm = () => {
                       }}
                       placeHolder="Select City"
                       disabled={isSubmitting || !currentState}
+                      defaultValue={currentCity}
                     />
                   </Form.Group>
                 </Row>

@@ -1,0 +1,227 @@
+.button-glossy {
+            width: 90px !important;
+            height: 70px !important;
+            border-radius: 100% !important;
+            border: none;
+            color: white;
+            font-size: 15px;
+            font-weight: bold; ;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 
+                0 10px 20px rgba(0, 0, 0, 0.3),
+                0 6px 6px rgba(0, 0, 0, 0.23);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            display: flex;
+         align-items: center;      /* vertical center */
+  justify-content: center;  /* horizontal center */
+       
+   font-weight: 500;
+}
+.button-glossy::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.3) 50%,
+                transparent 70%
+            );
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+        }
+
+        .button-glossy:hover::before {
+            left: 100%;
+        }
+
+        .button-glossy:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 15px 30px rgba(0, 0, 0, 0.4),
+                0 10px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .button-glossy:active {
+            transform: translateY(2px);
+            box-shadow: 
+                0 5px 10px rgba(0, 0, 0, 0.3),
+                0 3px 3px rgba(0, 0, 0, 0.2);
+        }
+/* Speaking state */
+.button-glossy.speaking {
+  background: linear-gradient(135deg, #ff7a18, #ffb347) !important;
+  box-shadow: 0 0 25px rgba(255, 165, 0, 0.9);
+  animation: pulseglow-speak 1.5s infinite;
+}
+@keyframes pulseglow-speak {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(66, 165, 245, 0.6);
+  }
+  70% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 18px rgba(66, 165, 245, 0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* Listening state */
+.button-glossy.listening {
+  background: linear-gradient(135deg, violet, blue) !important;
+  box-shadow: 0 0 25px rgba(66, 165, 245, 0.9);
+  animation: pulseGlow 1.5s infinite;
+}
+
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(66, 165, 245, 0.6);
+  }
+  70% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 18px rgba(66, 165, 245, 0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.button-glossy.listening {
+  background: linear-gradient(45deg, #0f62fe, #ff00ff) !important;
+  box-shadow: 0 0 20px rgba(15, 98, 254, 0.9);
+  animation: pulseGlow 1.5s infinite;
+  
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(15, 98, 254, 0.6);
+  }
+  70% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 16px rgba(15, 98, 254, 0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.sound-waves {
+  position: absolute;
+  display: flex;
+  gap: 4px;
+  z-index: 1;
+}
+
+.sound-waves span {
+  width: 4px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  animation: wave 1.2s infinite ease-in-out;
+}
+
+/* Wave delay */
+.sound-waves span:nth-child(1) {
+  animation-delay: 0s;
+}
+.sound-waves span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.sound-waves span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* 🔵 Listening State */
+.button-glossy.listening {
+  background: linear-gradient(135deg, violet, red);
+}
+
+.button-glossy.listening .sound-waves span {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+
+.button-glossy.speaking {
+  background: linear-gradient(135deg, #ff7a18, #ffb347);
+}
+
+.button-glossy.speaking .sound-waves span {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+@keyframes wave {
+  0% {
+    height: 8px;
+  }
+  50% {
+    height: 22px;
+  }
+  100% {
+    height: 8px;
+  }
+}
+
+/* =========================
+   Bootstrap Responsive Fix
+   ========================= */
+
+/* Desktop (default – keeps your original values) */
+.button-glossy {
+  width: 70px !important;
+  height: 70px !important;
+  bottom: 20px !important;
+  right: 20px !important;
+}
+
+/* Tablet (Bootstrap md ≤ 991px) */
+@media (max-width: 991.98px) {
+  .button-glossy {
+    width: 60px !important;
+    height: 60px !important;
+    bottom: 16px !important;
+    right: 16px !important;
+  }
+
+  .button-glossy span {
+    font-size: 10px !important;
+  }
+}
+
+/* Mobile (Bootstrap sm ≤ 575px) */
+@media (max-width: 575.98px) {
+  .button-glossy {
+    width: 55px !important;
+    height: 55px !important;
+    bottom: 14px !important;
+    right: 14px !important;
+  }
+
+  .button-glossy span {
+    font-size: 8px !important;
+  }
+}
+
+/* Optional: sound wave animation (safe) */
+@keyframes wave {
+  0% {
+    transform: scaleY(0.5);
+  }
+  50% {
+    transform: scaleY(1.2);
+  }
+  100% {
+    transform: scaleY(0.5);
+  }
+}

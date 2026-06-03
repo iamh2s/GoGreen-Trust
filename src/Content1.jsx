@@ -24,7 +24,7 @@ const Content1 = () => {
   }, 500);
 }, []);
   return (
-    <>
+    <>        
     <div className='ca'>
     <Carousel data-bs-theme="light" className='carousel-fade' interval={4000}  ride="carousel"
   pause={false}>
@@ -79,6 +79,7 @@ const Content1 = () => {
                 <p className='mt-1' data-aos="fade-up">
                     We make a living by what we get. We make a life by <br /> what we give.
                 </p>
+                
             </Carousel.Caption>
         </Carousel.Item>
     </Carousel>

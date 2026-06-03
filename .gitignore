@@ -27,3 +27,5 @@ dist-ssr
 node_modules/
 __pycache__/
 .env
+
+.vercel
